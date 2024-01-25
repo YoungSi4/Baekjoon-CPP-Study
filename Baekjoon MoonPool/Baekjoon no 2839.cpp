@@ -1,4 +1,5 @@
 // no 2839 설탕배달
+// 정답 ! , 설탕 봉지 수를 합한 값을 제외한 모든 cout을 지우면 정답이다.
 #include<iostream>
 #include<iomanip>
 using namespace std;
@@ -7,6 +8,7 @@ int main() {
 	// 설탕 배달량 입력 (3 <= N <= 5000)
 	int N = 0;
 	cin >> N;
+	int i = 0;
 	// 1. -1 반환 규칙
 	
 	// 16 > 5*2 + 3*2 = 16 // 꼭 3의 배수 5의 배수가 아니어도.
@@ -15,16 +17,15 @@ int main() {
 	// 반복 : 0 <= N - 5*i, i++ -> int i
 	// (N - 5*i) % 3 != 0 이라면 return -1
 
-	for (int i = 0; 5*i <= N ; i++) { // 최대 1000번 반복
+	for (i; 5*i <= N ; i++) { // 최대 1000번 반복
 		if ((N - 5 * i) % 3 == 0) {
 			break;
 		}
-		else if((N - 5 * i) - 3 < 0){
-			cout << "-1";
-			return 0;
-		}
 	}
-	
+	if (5 * i > N){
+		cout << "-1";
+		return 0;
+	}
 
 	// 2. 최솟값 탐색
 	
@@ -41,12 +42,14 @@ int main() {
 	// x + y = minimize	-- 2
 	
 	for (int num_5kg = N/5; 0 <= num_5kg / 5; num_5kg--) {
-		 float num_3kg = (N - num_5kg * 5) / 3;
-		 int num_3kg_inte = static_cast<int>(num_3kg);
-		 if (num_3kg == num_3kg_inte) {
-			 /*cout << "5키로 봉지 수: " << num_5kg << endl;
-			 cout << "3키로 봉지 수: " << num_3kg << endl;*/
-			 cout << num_5kg + num_3kg;
+		float num_3kg = (N - num_5kg * 5) / 3;
+		int num_3kg_int = num_3kg;
+		 cout << "num_3kg: " << num_3kg << endl;
+		 cout << "num_3kg int: " << num_3kg_int << endl;
+		 if (num_3kg_int * 3 + num_5kg * 5 == N) {
+			 cout << "5키로 봉지 수: " << num_5kg << endl;
+			 cout << "3키로 봉지 수: " << num_3kg_int << endl;
+			 cout << num_5kg + num_3kg_int;
 			 return 0;
 		}
 	}
