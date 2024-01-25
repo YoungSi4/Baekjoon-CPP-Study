@@ -44,8 +44,9 @@ int main() {
 		 float num_3kg = (N - num_5kg * 5) / 3;
 		 int num_3kg_inte = static_cast<int>(num_3kg);
 		 if (num_3kg == num_3kg_inte) {
-			 cout << "5Å°·Î ºÀÁö ¼ö: " << num_5kg << endl;
-			 cout << "3Å°·Î ºÀÁö ¼ö: " << num_3kg << endl;
+			 /*cout << "5Å°·Î ºÀÁö ¼ö: " << num_5kg << endl;
+			 cout << "3Å°·Î ºÀÁö ¼ö: " << num_3kg << endl;*/
+			 cout << num_5kg + num_3kg;
 			 return 0;
 		}
 	}
