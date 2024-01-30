@@ -1,5 +1,5 @@
 // no 2775 부녀회장이 될테야
-// 어... 파이썬 쓸게요
+// ㄴㄴ 동적할당 써서 해보셈
 #include<iostream>
 using namespace std;
 
@@ -25,13 +25,4 @@ int main() {
 	 Apartment = [a][b]
 	 */
 	
-	int Apartment
-
-	for(i = 1; i <= b; i++){
-		Apartment[0][i-1] = i	
-	}
-	for(i = 0; i <= a; i++){
-		
-
 	
-}
